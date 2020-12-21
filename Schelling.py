@@ -9,8 +9,8 @@ class Schelling:
         self.neighbors_count = neighbors_count
         self.data_grid = input_data.values
     
-    def run(self):
-        """Runs the Schelling's segragation model simulation."""
+    def run_simulation(self):
+        # Runs the Schelling's segragation model simulation for one iteration.
         for (row, col), value in np.ndenumerate(self.data_grid):
             char_type = self.data_grid[row, col]
             if char_type != 0:
@@ -22,7 +22,7 @@ class Schelling:
                     similar_chars = len(np.where(neighborhood == char_type)[0]) - 1
                     similarity_ratio = similar_chars / (neighborhood_size - empty_cells_count - 1.)
 
-                    # Char is unsatisfied if its similarity ration is lower than the similarity threshold
+                    # Char is unsatisfied if its similarity ratio is lower than the similarity threshold
                     is_unsatisfied = (similarity_ratio < self.similarity_threshold)
                     if is_unsatisfied:
                         empty_cells = list(zip(np.where(self.data_grid == 0)[0], np.where(self.data_grid == 0)[1]))
@@ -32,8 +32,8 @@ class Schelling:
                         self.data_grid[random_empty_cell] = char_type
                         self.data_grid[row,col] = 0
 
-    def get_mean_similarity_ratio(self):
-        """Calculates the mean similarity ratio across all agents"""
+    def get_average_similarity_ratio(self):
+        # Calculates the average similarity ratio across all agents for the entire data grid
         count = 0
         similarity_ratio = 0
         for (row, col), value in np.ndenumerate(self.data_grid):
