@@ -58,7 +58,7 @@ Step by Step Process:
 ## Running Unit Tests via Pytest
 1. The Unit Test is using Pytest Framework so please install Pytest before running the test:
    - Note that it is already included as required packages in the requirements.txt
-   - Check the version to make sure it is properly nstalled (the displayed version should be the latest pytest version): **`pytest --version`** 
+   - Check the version to make sure it is properly installed (the displayed version should be the latest pytest version): **`pytest --version`** 
 2. To start the test, run the command : pytest -q ey_gds_exam_jairdan_babac.py
 3. *(Optional)* You can add customized test cases to test it further. Just follow the format from the already created test scenarios.
 
@@ -68,4 +68,4 @@ Step by Step Process:
 2. If errors such a **No data/file in the directory is found** occurrs, please be sure to execute the commands within the **app directory** ot at least the CLI/Terminal is running within the project directory.
 
 ### Contact me:
-You can contact me via my **[email](jbhayback@gmail.com)** for more info.
+You can contact me via my **jbhayback@gmail.com** for more info.
