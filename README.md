@@ -28,8 +28,8 @@ Step by Step Process:
 Prerequisites:
 1. Your testing environment should install dependencies and libraries first. Above all, Python 3 and up (preferably **3.7**) has already been installed. *All the packages that is needed to be installed is in **requirements.txt***
 2. Package installation:
-   - Windows : **`python3 -m pip3 install --default-timeout=100 -r requirements.txt`**
-   - Linux/Ubuntu : *Given pip3 is installed prior* : **`pip3 install --default-timeout=100 -r requirements.txt`**
+   - **Windows** : **`python3 -m pip3 install --default-timeout=100 -r requirements.txt`**
+   - **Linux/Ubuntu** : *Given pip3 is installed prior* : **`pip3 install --default-timeout=100 -r requirements.txt`**
 
 Step by Step Process:
 1. Once installation of all the prerequisite packages is done, run the command **`streamlit run App.py`**
@@ -54,9 +54,10 @@ Step by Step Process:
 ### Schelling's Model of Segregation
 1. The inputs can be modified in the slidebar.
 2. You can adjust the threshold of similarity depending on your choice from 0.1 to 1.0.
+   - **Similarity Threshold** *is a threshold that will used to determine if a character type is satisfied in its neighborhood(other character sequences within the data grid). If the ratio of similar neighbors to the entire neighborhood population is lower than the **similarity_threshold**, then the character type moves to an empty cell.*
 3. You can also adjust the number of iterations for the simulation. This is to further calculate the largest possibility of mean similarity ratio,
 4. Prior to running the simulation, the first plot/graph displayed is the original data grid. **X is RED, O is BLUE and blank is WHITE**
-5. After clicking run simulation button, **Both the graph and the new data grid with the largest calculated mean similarity ratio will be displayed after simulation**.
+5. After clicking run simulation button, **both the graph and the new data grid with the largest calculated mean similarity ratio will be displayed after simulation**.
 
 ## Running Unit Tests via Pytest
 1. The Unit Test is using Pytest Framework so please install Pytest before running the test:
@@ -70,5 +71,5 @@ Step by Step Process:
    - Example: **`pip3 install -default-timeout=100 <package-name>`** even without specifying the version.
 2. If errors such a **No data/file in the directory is found** occurrs, please be sure to execute the commands within the **app directory** ot at least the CLI/Terminal is running within the project directory.
 
-## Contact me:
+## Contact Me
 You can contact me via my email **jbhayback@gmail.com** for more info.
