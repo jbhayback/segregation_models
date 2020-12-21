@@ -48,8 +48,8 @@ Step by Step Process:
 3. Also, the input row(m) and column(n) should be a multiple of M and N respectively. The reason behind is that the original data grid (MxN) cannot be splitted in equal population/cells of the smaller 2D-array or known as tracts in this context. An error message will appear if invalid input is set.
    - *Example: If **M=10 and N=10** then the input row(m) should be a multiple 10 (i.e 1, 2 and 5). This goes also with the input column(n).*
 4. Once button for calculation **Index of Dissimilarity (D)** is clicked, the data grid or the smaller 2D array for each Tracts is displayed and the resulting **D** is shown below the button.
-   - *Value of **D** represents the proportion of a group that would need to move in order to create a uniform distribution of population.
-   - *The value of **D** is a maximum when each tract contains only one group; it is minimized (0) when the proportion of each group in each tract is the same as the proportion in the population as a whole.
+   - *Value of **D** represents the proportion of a group that would need to move in order to create a uniform distribution of population.*
+   - *The value of **D** is a maximum when each tract contains only one group; it is minimized (0) when the proportion of each group in each tract is the same as the proportion in the population as a whole.*
    
 ### Schelling's Model of Segregation
 1. The inputs can be modified in the slidebar.
