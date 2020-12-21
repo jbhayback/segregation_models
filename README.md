@@ -62,10 +62,10 @@ Step by Step Process:
 2. To start the test, run the command : pytest -q ey_gds_exam_jairdan_babac.py
 3. *(Optional)* You can add customized test cases to test it further. Just follow the format from the already created test scenarios.
 
-### Troubleshooting
+## Troubleshooting
 1. In case the installation of the prerequisite packages is failing, you can install manually the packages via CLI.
    - Example: **`pip3 install -default-timeout=100 <package-name>`** even without specifying the version.
 2. If errors such a **No data/file in the directory is found** occurrs, please be sure to execute the commands within the **app directory** ot at least the CLI/Terminal is running within the project directory.
 
-### Contact me:
+## Contact me:
 You can contact me via my **jbhayback@gmail.com** for more info.
