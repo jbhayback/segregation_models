@@ -1,19 +1,20 @@
 # Segregation Models
-## Index of Dissimilarity (D) : Segregation Model
+## Introduction
+### Index of Dissimilarity (D) : Segregation Model
 The Index of Dissimilarity is the most common measure of segregation. Although it has imitations, it is relatively easy to calculate and to interpret.
 
-## Schelling's Segregation Model
+### Schelling's Segregation Model
 Schelling's model is the mathematical version of the saying "birds of the same feather flocks together". In this simulation, an agent is happy or satisfied id its closest neighbor is the same class as to itself.
 
 ## Instructions to run the application
-1. This application is executed and wrapped via Streamlit.
+1. This application is executed and wrapped via [Streamlit](https://www.streamlit.io/).
 2. There are 2 methods to run it:
    - Docker container
    - Command Line Interface/Terminal
 
 ### Docker container
 Prerequisites:
-1. Your testing environment should have Docker installed.
+1. Your testing environment should have Docker installed already.
 2. Docker daemon service is running.
 *To know more about docker, visit [Docker website](https://docs.docker.com/)*
 
@@ -25,7 +26,7 @@ Step by Step Process:
 
 ### CLI/Terminal
 Prerequisites:
-1. Your testing environment should install depencies and libraries first. Above all, Python 3 and up (preferably **3.7**) has already been installed. *All the packages that is needed to be installed is in **requirements.txt***
+1. Your testing environment should install dependencies and libraries first. Above all, Python 3 and up (preferably **3.7**) has already been installed. *All the packages that is needed to be installed is in **requirements.txt***
 2. Package installation:
    - Windows : **`python3 -m pip3 install --default-timeout=100 -r requirements.txt`**
    - Linux/Ubuntu : *Given pip3 is installed prior* : **`pip3 install --default-timeout=100 -r requirements.txt`**
@@ -58,8 +59,8 @@ Step by Step Process:
 ## Running Unit Tests via Pytest
 1. The Unit Test is using Pytest Framework so please install Pytest before running the test:
    - Note that it is already included as required packages in the requirements.txt
-   - Check the version to make sure it is properly installed (the displayed version should be the latest pytest version): **`pytest --version`** 
-2. To start the test, run the command : pytest -q ey_gds_exam_jairdan_babac.py
+   - Check the version to make sure it is properly installed (*the displayed version should be the latest pytest version*): **`pytest --version`** 
+2. To start the test, run the command : **`pytest -q Tests.py`**
 3. *(Optional)* You can add customized test cases to test it further. Just follow the format from the already created test scenarios.
 
 ## Troubleshooting
@@ -68,4 +69,4 @@ Step by Step Process:
 2. If errors such a **No data/file in the directory is found** occurrs, please be sure to execute the commands within the **app directory** ot at least the CLI/Terminal is running within the project directory.
 
 ## Contact me:
-You can contact me via my **jbhayback@gmail.com** for more info.
+You can contact me via my email **jbhayback@gmail.com** for more info.
