@@ -1,10 +1,16 @@
 # Segregation Models
 ## Introduction
 ### Index of Dissimilarity (D) : Segregation Model
-The Index of Dissimilarity is the most common measure of segregation. Although it has imitations, it is relatively easy to calculate and to interpret.
+The Index of Dissimilarity is the most common measure of segregation. Although it has imitations, it is relatively easy to calculate and to interpret. It is a comparison between two groups/types and measures their relative separation (high dissimilarity) or integration (low dissimilarity) across all neighborhoods in an area (in this case a data grid).
+
+The dissimilarity index (**D**) varies between 0 and 100, and measures the percentage of one group that would have to move across neighborhoods to be distributed the same way as the second group. (It is a symmetrical measure so that this interpretation can apply to either group). A dissimilarity index of 0 indicates conditions of total integration under which both groups are distributed in the same proportions across all neighborhoods. A dissimilarity index of 100 indicates conditions of total segregation such that the members of one group are located in completely different neighborhoods than the second group.
 
 ### Schelling's Segregation Model
-Schelling's model is the mathematical version of the saying "birds of the same feather flocks together". In this simulation, an agent is happy or satisfied id its closest neighbor is the same class as to itself.
+Schelling's model is the mathematical version of the saying "birds of the same feather flocks together". In this simulation, an agent is happy or satisfied when it's closest neighbor is the same class as to itself.
+
+The idea behind the Schelling Model is that we create an M x N grid from our data file (**Input_data.csv**) that contains homes/cells for our agents, which we simulate to belong to different char/types (*in this case X and O only*), with a certain possibility that cells are empty.
+
+In each iteration we calculate a ratio of same-race neighbors over the total amount neighbors for each home (position on the grid). If the ratio falls below a certain threshold (*depends on the user input*), the agent becomes dissatisfied and will move to another (random) home/cell. This process is iterated to find a possible state of equilibrium with the largest mean similarity ratio.
 
 ## Instructions to run the application
 1. This application is executed and wrapped via [Streamlit](https://www.streamlit.io/).
@@ -43,21 +49,27 @@ Step by Step Process:
 
 ### Dissimilarity : Segregation Model
 1. The inputs can be modified in the slidebar.
+   - ![](images/dissimilarity_seg_model_input.JPG)
 2. Equal population per tract/smaller 2D-array is assumed. This means that you cannot input number of rows or column whose resulting product is not a multiple of the total population. Otherwise, an error message will appear.
-   - *Example: If M=10 N=10 then the total population/cells is 100. The product of the input row(m) and column(n) should be multiple of 100 (i.e 2x2, 2x5, 5x2, 5x5, etc.)*
-3. Also, the input row(m) and column(n) should be a multiple of M and N respectively. The reason behind is that the original data grid (MxN) cannot be splitted in equal population/cells of the smaller 2D-array or known as tracts in this context. An error message will appear if invalid input is set.
-   - *Example: If **M=10 and N=10** then the input row(m) should be a multiple 10 (i.e 1, 2 and 5). This goes also with the input column(n).*
+   - **Example: If the data grid M=10 N=10 then the total population/cells is 100. The product of the input row(m) and column(n) should be multiple of 100 (i.e. 2x2, 2x5, 5x2, 5x5, etc.)**
+3. In connection with No. 2, the input row(m) and column(n) should be a multiple of M and N respectively as well. The reason behind is that the original data grid (MxN) cannot be splitted in equal population/cells of the smaller 2D-array(known as *tracts*) if the input m and n are non-multiples of its corresponding M and N. An error message will appear if invalid input is set.
+   - **Example: If the data grid M=10 and N=10 then the input row(m) should be a multiple 10 (i.e. 1, 2 and 5). This goes also with the input column(n).**
 4. Once button for calculation **Index of Dissimilarity (D)** is clicked, the data grid or the smaller 2D array for each Tracts is displayed and the resulting **D** is shown below the button.
+   - ![](images/D_display.JPG)
    - *Value of **D** represents the proportion of a group that would need to move in order to create a uniform distribution of population.*
-   - *The value of **D** is a maximum when each tract contains only one group; it is minimized (0) when the proportion of each group in each tract is the same as the proportion in the population as a whole.*
+   - *Value of **D** is maximum when each tract contains only one group; it is minimized (0) when the proportion of each group in each tract is the same as the proportion in the population as a whole.*
+   - Basic formula: ![](images/dissimilarity_index_formula.JPG)
    
 ### Schelling's Model of Segregation
 1. The inputs can be modified in the slidebar.
 2. You can adjust the threshold of similarity depending on your choice from 0.1 to 1.0.
    - **Similarity Threshold** *is a threshold that will used to determine if a character type is satisfied in its neighborhood(other character sequences within the data grid). If the ratio of similar neighbors to the entire neighborhood population is lower than the **similarity_threshold**, then the character type moves to an empty cell.*
-3. You can also adjust the number of iterations for the simulation. This is to further calculate the largest possibility of mean similarity ratio,
+3. You can also adjust the number of iterations for the simulation. This is to further calculate the largest possibility of mean similarity ratio.
 4. Prior to running the simulation, the first plot/graph displayed is the original data grid. **X is RED, O is BLUE and blank is WHITE**
+   - ![](images/original_data_grid.JPG)
+   - ![](images/schelling_seg_model_initial_graph.JPG)
 5. After clicking run simulation button, **both the graph and the new data grid with the largest calculated mean similarity ratio will be displayed after simulation**.
+   - ![](images/new_data_grid_with_satisfied_neighboring_characters.JPG)
 
 ## Running Unit Tests via Pytest
 1. The Unit Test is using Pytest Framework so please install Pytest before running the test:
