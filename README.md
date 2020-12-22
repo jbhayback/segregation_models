@@ -77,6 +77,13 @@ Step by Step Process:
    - ![](images/schelling_seg_model_final_graph.JPG)
    - ![](images/new_data_grid_with_satisfied_neighboring_characters.JPG)
 6. Alternatively, you can also check the new data grid in **Ouput_data.csv**. This is produced after successful simulation and is located within the same project directory.
+   - If app is run via docker container, accessing **Ouput_data.csv** is a bit tricky since the output file is created within the docker container as well. Therefore, you need to access docker container first.
+   - To do so, just follow these steps:
+   - **`docker ps`** This will display all the docker container running in the host. Get the container id of the image **st:app**
+   - **`docker exec -it <container-id> bash`** You will be able to access inside the docker container root folder this time.
+   - Upon executing **`ls`**, you will be able to view the list of files within the directory including the **Output_data.csv**. To view and verify its content, you can execute **`cat Output_data.csv`** and voila!!! you will be able to see the new data grid with satisfied neigboring characters - similar to the data grid shown via the Streamlit app. :)
+   
+
 
 ## Running Unit Tests via Pytest
 1. The Unit Test is using Pytest Framework so please install Pytest before running the test:
