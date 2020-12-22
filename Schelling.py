@@ -10,7 +10,7 @@ class Schelling:
         self.data_grid = input_data.values
     
     def run_simulation(self):
-        # Runs the Schelling's segragation model simulation for one iteration.
+        # Runs the Schelling's segregation model simulation for one iteration.
         for (row, col), value in np.ndenumerate(self.data_grid):
             char_type = self.data_grid[row, col]
             if char_type != 0:

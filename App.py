@@ -111,7 +111,7 @@ if (validate_data_for_invalid_chars()):
     st.sidebar.subheader("")
     st.sidebar.subheader("Schelling's Segregation Model Inputs")
     similarity_threshold = st.sidebar.slider("Similarity Threshold", 0., 1., .4)
-    n_iterations = st.sidebar.number_input("Number of Iterations", 30)
+    n_iterations = st.sidebar.number_input("Number of Iterations", 20)
 
     schelling = SchellingModel(cleaned_input_data, similarity_threshold, 3)
     mean_similarity_ratio = []
@@ -173,8 +173,13 @@ if (validate_data_for_invalid_chars()):
             progress_bar.progress((i+1.)/n_iterations)
 
     if new_satisfied_data_grid.size != 0:
+        # Display the new data grid with satisfied neighboring characters
+        new_data_grid_df = convert_numeric_grid_to_char_seq_grid(new_satisfied_data_grid)
         st.header("New Data Grid with Satisfied Neighboring Characters")
-        st.dataframe(convert_numeric_grid_to_char_seq_grid(new_satisfied_data_grid))
+        st.dataframe(new_data_grid_df)
+
+        # Save output to Output.csv file
+        pd.DataFrame(new_data_grid_df).to_csv('Output_data.csv', index=False)
 
 else:
-    st.error('ERROR: Invalid chars in the data. Please check dataset from Input_data.csv and retry.')
+    st.error('ERROR: Invalid characters in the data. Please check dataset from Input_data.csv and retry.')
