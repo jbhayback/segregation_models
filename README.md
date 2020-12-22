@@ -43,7 +43,8 @@ Step by Step Process:
 
 
 ## Application Details
-**Note: Input dataset can be modified inside the Input_data.csv.**
+**Note: Input dataset can be modified inside the Input_data.csv. However, you can use other input data file via the CSV file path input. *Default: Input_data.csv***
+- ![](images/input_csv_file.JPG)
 - If you add data for another column, be sure to put header Col<column-#> prior to adding test data.
 - For additional row test data, you cas just add directly.
 
@@ -72,6 +73,7 @@ Step by Step Process:
    - ![](images/original_data_grid.JPG)
    - ![](images/schelling_seg_model_initial_graph.JPG)
 5. After clicking run simulation button, **both the graph and the new data grid with the largest calculated mean similarity ratio will be displayed after simulation**.
+   - ![](images/schelling_seg_model_final_graph.JPG)
    - ![](images/new_data_grid_with_satisfied_neighboring_characters.JPG)
 6. Alternatively, you can also check the new data grid in **Ouput_data.csv**. This is produced after successful simulation and is located within the same project directory.
 
@@ -79,7 +81,7 @@ Step by Step Process:
 1. The Unit Test is using Pytest Framework so please install Pytest before running the test:
    - Note that it is already included as required packages in the requirements.txt
    - Check the version to make sure it is properly installed (*the displayed version should be the latest pytest version*): **`pytest --version`** 
-2. To start the test, run the command : **`pytest -q Tests.py`**
+2. To start the test, run the command : **`pytest -q ./tests/Tests.py`**
 3. *(Optional)* You can add customized test cases to test it further. Just follow the format from the already created test scenarios.
 
 ## Troubleshooting
