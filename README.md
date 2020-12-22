@@ -55,13 +55,16 @@ Step by Step Process:
 3. In connection with No. 2, the input row(m) and column(n) should be a multiple of M and N respectively as well. The reason behind is that the original data grid (MxN) cannot be splitted in equal population/cells of the smaller 2D-array(known as *tracts*) if the input m and n are non-multiples of its corresponding M and N. An error message will appear if invalid input is set.
    - **Example: If the data grid M=10 and N=10 then the input row(m) should be a multiple 10 (i.e. 1, 2 and 5). This goes also with the input column(n).**
 4. Once button for calculation **Index of Dissimilarity (D)** is clicked, the data grid or the smaller 2D array for each Tracts is displayed and the resulting **D** is shown below the button.
+   - ![](images/data_grid_for_each_tract.JPG)
    - ![](images/D_display.JPG)
+   - **Basic formula**: ![](images/dissimilarity_index_formula.JPG)
+5. Explanation of D:
    - *Value of **D** represents the proportion of a group that would need to move in order to create a uniform distribution of population.*
    - *Value of **D** is maximum when each tract contains only one group; it is minimized (0) when the proportion of each group in each tract is the same as the proportion in the population as a whole.*
-   - Basic formula: ![](images/dissimilarity_index_formula.JPG)
    
 ### Schelling's Model of Segregation
 1. The inputs can be modified in the slidebar.
+   - ![](images/schelling_seg_model_input.JPG)
 2. You can adjust the threshold of similarity depending on your choice from 0.1 to 1.0.
    - **Similarity Threshold** *is a threshold that will used to determine if a character type is satisfied in its neighborhood(other character sequences within the data grid). If the ratio of similar neighbors to the entire neighborhood population is lower than the **similarity_threshold**, then the character type moves to an empty cell.*
 3. You can also adjust the number of iterations for the simulation. This is to further calculate the largest possibility of mean similarity ratio.
@@ -70,6 +73,7 @@ Step by Step Process:
    - ![](images/schelling_seg_model_initial_graph.JPG)
 5. After clicking run simulation button, **both the graph and the new data grid with the largest calculated mean similarity ratio will be displayed after simulation**.
    - ![](images/new_data_grid_with_satisfied_neighboring_characters.JPG)
+6. Alternatively, you can also check the new data grid in **Ouput_data.csv**. This is produced after successful simulation and is located within the same project directory.
 
 ## Running Unit Tests via Pytest
 1. The Unit Test is using Pytest Framework so please install Pytest before running the test:
