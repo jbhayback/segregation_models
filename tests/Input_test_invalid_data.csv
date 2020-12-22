@@ -1,0 +1,7 @@
+Col1,Col2,Col3,Col4,Col5,Col6
+X,X,O,O,C,
+X,O,O,C,O,
+O,X,X,,X,O
+O,X,X,X,O,X
+X,O,O,X,O,X
+O,O

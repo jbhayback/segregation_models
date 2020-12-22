@@ -18,7 +18,7 @@ class Dissimilarity:
 			.reshape(-1, nrows, ncols))
 
 	def calculate_partial_index(self, tract_data):
-		# Calculates the partial per tract
+		# Calculates the partial index per tract
 		x_count_in_tract = self.count_char(tract_data, 'X')
 		o_count_in_tract = self.count_char(tract_data, 'O')
 
