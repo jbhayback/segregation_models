@@ -45,6 +45,7 @@ Step by Step Process:
 ## Application Details
 **Note: Input dataset can be modified inside the Input_data.csv. However, you can use other input data file via the CSV file path input. *Default: Input_data.csv***
 - ![](images/input_csv_file.JPG)
+- Make sure that the csv file is within the project directoy. **If you are running via docker container, you have to rerun **`docker image build -t st:app .` for changes to take effect.****
 - If you add data for another column, be sure to put header Col<column-#> prior to adding test data.
 - For additional row test data, you cas just add directly.
 
@@ -82,7 +83,7 @@ Step by Step Process:
    - Note that it is already included as required packages in the requirements.txt
    - Check the version to make sure it is properly installed (*the displayed version should be the latest pytest version*): **`pytest --version`** 
 2. To start the test, run the command : **`pytest -q ./tests/Tests.py`**
-3. *(Optional)* You can add customized test cases to test it further. Just follow the format from the already created test scenarios.
+3. *(Optional)* You can add customized test cases to test it further. Just follow the format from the already created test scenarios. **If you are running via docker container, you have to rerun **`docker image build -t st:app .` for changes to take effect.****
 
 ## Troubleshooting
 1. In case the installation of the prerequisite packages is failing, you can install manually the packages via CLI.
