@@ -1,7 +1,7 @@
+import sys
 import numpy as np
 import pandas as pd
 import streamlit as st
-import sys
 
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
@@ -91,7 +91,6 @@ def main():
                 partial_indices = []
 
                 data_tracts = dissimilarity.get_splitted_data(input_row, input_col)
-                print(type(data_tracts))
                 tract_number = 1
                 for data_per_tract in data_tracts:
                     partial_index = dissimilarity.calculate_partial_index(data_per_tract)
@@ -149,13 +148,13 @@ def main():
 
         new_satisfied_data_grid = np.array([])
         if st.sidebar.button('Run Schelling Simulation'):
-            current_largest_mean_sim_ratio = schelling.get_average_similarity_ratio();
+            current_highest_mean_sim_ratio = schelling.get_average_similarity_ratio();
             for i in range(n_iterations):
                 # Starts running the Schelling Model Simulation
                 schelling.run_simulation()
                 latest_sim_ratio = schelling.get_average_similarity_ratio()
-                if current_largest_mean_sim_ratio < latest_sim_ratio:
-                    current_largest_mean_sim_ratio = latest_sim_ratio
+                if current_highest_mean_sim_ratio < latest_sim_ratio:
+                    current_highest_mean_sim_ratio = latest_sim_ratio
                     new_satisfied_data_grid = schelling.data_grid
                 mean_similarity_ratio.append(schelling.get_average_similarity_ratio())
                 plt.figure(figsize=(8, 4))
@@ -187,6 +186,7 @@ def main():
 
             # Save output to Output.csv file
             pd.DataFrame(new_data_grid_df).to_csv('Output_data.csv', index=False)
+            st.warning("Output_data.csv file has been created.")
 
     else:
         st.error('ERROR: Invalid characters in the data. Please check dataset from Input_data.csv and retry.')

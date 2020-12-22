@@ -20,7 +20,14 @@ def application_main():
 
 	return app
 
-# App tests
+###################################################################################
+# NOTE: Schelling class cannot be tested since we are using random library in it. #
+#		There will be no fixed result to be expected from	.					  #
+###################################################################################
+
+##################
+# Main app tests #
+##################
 def test_main_app_count_char(application_main):
 	# Expected values
 	expected_X_char_count = 15
@@ -97,7 +104,9 @@ def test_convert_numeric_grid_to_char_seq_grid(application_main):
 	character_seq_test_input_data = pd.read_csv('./tests/Input_test_data.csv').fillna('')
 	assert application_main.convert_numeric_grid_to_char_seq_grid(numeric_test_data).equals(character_seq_test_input_data)
 
-# Dissimilarity Tests
+#############################
+# Dissimilarity Class Tests #
+#############################
 def test_get_splitted_data(dissimilarity_seg_model):
 	# Expected 3x3x4 3D Array - these are the expected Tracts to be created when 6x6 Matrix will be splitted to 3x3 matrices per Tract
 	expected_tracts_array =[[['X','X','O'],['X','O','O'],['O','X','X']],
@@ -138,3 +147,4 @@ def test_count_char(dissimilarity_seg_model):
 	assert X_char_count == expected_X_char_count
 	assert O_char_count == expected_O_char_count
 	assert blank_char_count == expected_blank_char_count
+	
