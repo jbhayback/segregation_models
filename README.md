@@ -1,7 +1,7 @@
 # Segregation Models
 ## Introduction
-### Index of Dissimilarity (D) : Segregation Model
-The Index of Dissimilarity is the most common measure of segregation. Although it has imitations, it is relatively easy to calculate and to interpret. It is a comparison between two groups/types and measures their relative separation (high dissimilarity) or integration (low dissimilarity) across all neighborhoods in an area (in this case a data grid).
+### Dissimilarity : Segregation Model
+The Index of Dissimilarity(**D**) is the most common measure of segregation. Although it has imitations, it is relatively easy to calculate and to interpret. It is a comparison between two groups/types and measures their relative separation (high dissimilarity) or integration (low dissimilarity) across all neighborhoods in an area (in this case a data grid).
 
 The dissimilarity index (**D**) varies between 0% and 100%, and measures the percentage of one group that would have to move across neighborhoods to be distributed the same way as the second group. (It is a symmetrical measure so that this interpretation can apply to either group). A dissimilarity index of 0% indicates conditions of total integration under which both groups are distributed in the same proportions across all neighborhoods. A dissimilarity index of 100% indicates conditions of total segregation such that the members of one group are located in completely different neighborhoods than the second group.
 
@@ -47,7 +47,7 @@ Step by Step Process:
 - ![](images/input_csv_file.JPG)
 - Make sure that the csv file is within the project directoy. **If you are running via docker container, you have to rerun **`docker image build -t st:app .` for changes to take effect.****
 - If you add data for another column, be sure to put header Col<column-#> prior to adding test data.
-- For additional row test data, you cas just add directly.
+- For additional row test data, you can just add directly.
 
 ### Dissimilarity : Segregation Model
 1. The inputs can be modified in the slidebar.
